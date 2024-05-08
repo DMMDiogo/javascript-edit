@@ -17,8 +17,15 @@
 
     const number = 41;
     const numbers = number > 40 && "É maior que 40";
+    const qualEoNome = object.name || "Qual é o nome?";
 
-    const frase = object.name || "Qual é o nome?";
+    let totalSum = 0;
+
+    if (number > 35) {
+      totalSum = number / 1.5;
+    } else {
+      totalSum = number;
+    }
   </script>
   <body></body>
 </html>
