@@ -6,6 +6,8 @@
     <title>Document</title>
   </head>
   <script>
+    /*exercicio loops*/
+
     for (let i = 0; i <= 10; i++) {
       if (i % 2 == 0) {
         console.log(i + " " + "é um número par");
@@ -26,13 +28,46 @@
 
     let o = 0;
     do {
-      o++;
       if (o % 2 == 0) {
         console.log(o + " " + "é um número par");
       } else {
         console.log(o + " " + "é um número ímpar");
       }
+      o++;
     } while (o <= 10);
+
+    /* exercício funções */
+
+    function multiplicacao(n, m) {
+      if (typeof n == "number" && typeof m == "number") {
+        const total = o + p;
+        return total;
+      } else {
+        return "Error";
+      }
+    }
+
+    function soma(o, p) {
+      if (typeof o == "number" && typeof p == "number") {
+        const total = o + p;
+        return total;
+      } else {
+        return "Error";
+      }
+    }
+
+    function gerarPessoa(str, age) {
+      if (typeof str == "number" && typeof age == "str") {
+        return "Error";
+      } else {
+        let object = {
+          Name: str,
+          Age: age,
+        };
+
+        return object;
+      }
+    }
   </script>
   <body></body>
 </html>
