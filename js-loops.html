@@ -83,17 +83,18 @@
 
     contaMeses(meses);
 
-
-
     /* exercício de strings */
 
-    let palavra = "SouODiogoMartins";
+    let palavra = "Sou O Diogo Martins";
 
     const compPalavra = palavra.length;
 
     const segPalavra = palavra.indexOf("Diogo");
 
-    let novaPalavra = palavra.replace("SouODiogoMartins", "Javascript é espetacular!");
+    let novaPalavra = palavra.replace(
+      "Sou O Diogo Martins",
+      "Javascript é espetacular!"
+    );
 
     let palavraMaiuscula = palavra.toUpperCase();
 
@@ -103,7 +104,26 @@
 
     console.log(palavrasPartes[2]);
 
+    /* exercício de arrays dois */
 
+    let arrayTeste = ["Diogo", "Martins"];
+    let arrayTamanho = arrayTeste.length;
+    let arrayAdicionar = arrayTeste.push("Malheiro");
+    let arrayTesteTwo = ["Diogo", "Malheiro", "Martins"];
+    let arrayEmString = arrayTesteTwo.join(" ");
+    let arrayRetirar = arrayTesteTwo.pop();
+    let arrayRetirarDois = arrayTesteTwo.splice(1, 1);
+    let arrayRetirarTres = arrayRetirar + " " + arrayRetirarDois;
+
+    const dadosPessoais = {
+      Nome: "Diogo",
+      Idade: "25",
+      Naturalidade: "Porto",
+    };
+
+    const parametros = Object.keys(dadosPessoais);
+    const dados = Object.values(dadosPessoais);
+    const ParamsDados = Object.entries(dadosPessoais);
   </script>
   <body></body>
 </html>
