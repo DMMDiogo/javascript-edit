@@ -3,3 +3,15 @@ const primeiraFuncao = function () {
 };
 
 primeiraFuncao();
+
+function form(nomeCampo) {
+    return function (dado) {
+      return console.log("Nome:" + " " + dado);
+     
+    };
+    
+  }
+
+  const campoNome = form("Nome");
+  campoNome("Diogo");
+  
