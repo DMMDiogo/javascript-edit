@@ -15,7 +15,7 @@
     const somar = function (x, y) {
       return x + y;
     };
-
+    /* IIFE */
     (function () {
       console.log("Diogo Martins Malheiro");
     })();
@@ -23,6 +23,38 @@
     (function (x, y) {
       console.log(x + y);
     })(1, 2);
+
+    /* Closure */
+
+    function funcaoTest(a) {
+      return function () {
+        return a / 2;
+      };
+    }
+    const funcao = funcaoTest(5);
+    console.log(funcao());
+
+    function divisaoDois(a) {
+      return function (b) {
+        return a / b;
+      };
+    }
+
+    const dividirPorCinco = divisaoDois(5);
+    console.log(dividirPorCinco(5));
+
+    /* funções construtoras */
+    function Livro(titulo, autor) {
+      this.titulo = titulo;
+      this.autor = autor;
+    }
+    const livroUm = new Livro("Os três Mosqueteiros", "Alexandre Dumas");
+    const livroDois = new Livro("Os Maias", "Eça de Queirós");
+    console.log(livroUm);
+    console.log(livroDois);
+
+    livroUm.titulo = "O conde de Monte Cristo";
+    console.log(livroUm);
   </script>
   <body></body>
 </html>
