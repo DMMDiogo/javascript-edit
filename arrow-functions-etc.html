@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    const transformaMaiusculas = (palavra) => palavra.toUpperCase();
+    console.log(transformaMaiusculas("ola"));
+
+    // Rest Parameter se fosse com o forEach, para entender melhor o Rest Parameter
+    function sum(...theArgs) {
+      let total = 0;
+      theArgs.forEach((arg) => (total += arg));
+      return total;
+    }
+    console.log(sum(1, 2, 3));
+    console.log(sum(10, 22, 43));
+
+    // reduce
+    const palavras = ["palavras", "um", "dois"];
+    const resultadoFinal = palavras.reduce(
+      (resultado, palavra) => resultado + " " + palavra,
+      "Começa assim: "
+    );
+
+    // Destructuring - Serve basicamente para criar constantes/variáveis para cada posição na array Ex: Utilizador
+
+    const arrayRandom = [1, 2, 3];
+
+    const [, , terceiro] = arrayRandom;
+
+    // spread operator é como se fosse um concat de arrays etc...
+
+    let arr1 = [4, 5];
+    let arr2 = [8, 9, 10];
+
+    arr = [...arr1, ...arr2];
+    console.log(arr);
+
+    // EXERCICIO ES6
+
+    var estudantes = [
+      { id: 1, nome: "João", idade: 20 },
+      { id: 2, nome: "Maria", idade: 22 },
+      { id: 3, nome: "Pedro", idade: 18 },
+      { id: 4, nome: "Ana", idade: 21 },
+    ];
+
+    const encontrarEstudante = function (a) {
+      estudantes.find((estudante) => estudante.id == a);
+    };
+
+    const nomesEstudantes = estudantes.forEach((estudante) =>
+      console.log(estudante.nome)
+    );
+
+    const idadesMaior10 = function (b) {
+      return estudantes.filter((estudante) => estudante.idade > b);
+      console.log(estudantes.b);
+    };
+    // A estrutura de acima é sempre a "mesma", usar parâmetro e a variável "estudante" ou etc... E ele procura
+  </script>
+  <body></body>
+</html>
