@@ -46,11 +46,11 @@ promise.then((result) => console.log(result)).catch((error) => console.log(error
 */
 
 
-const isPrime = (numero) => { return new Promise((resolve, reject) =>
-     { if (numero % numero == 0 && numero % 1 ==0){
-        resolve(numero + " não é primo")
+const dobro = (numero) => { return new Promise((resolve, reject) =>
+     { if (numero * numero  >= 400){
+        resolve("O dobro de " + numero + " é maior que 400")
      }
-    else { reject(numero + " é primo") }
+    else { reject("O dobro de " + numero + " é menor que 400") }
 })}
     
 
