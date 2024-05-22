@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<script>
- 
+  <script>
     /*const soma = (x, y) => {
         const total = x + y;   
         
@@ -31,7 +30,6 @@
 
 */
 
-
     /*const negativoPositivo = (numero) => { 
     return new Promise((resolve, reject) => { 
         if (numero >= 0) {
@@ -45,8 +43,7 @@
 promise.then((result) => console.log(result)).catch((error) => console.log(error))
 */
 
-
-const dobro = (numero) => { return new Promise((resolve, reject) =>
+    /* const dobro = (numero) => { return new Promise((resolve, reject) =>
      { if (numero * numero  >= 400){
         resolve("O dobro de " + numero + " é maior que 400")
      }
@@ -54,9 +51,42 @@ const dobro = (numero) => { return new Promise((resolve, reject) =>
 })}
     
 
-promise.then((result) => console.log(result)).catch((error) => console.log(error))
-</script>
-<body>
-    
-</body>
+promise.then((result) => console.log(result)).catch((error) => console.log(error)) */
+
+    //basicamente criamos parametros para quando da erro e quando se resolve, e o que acontece em cada um
+    /*
+    const parOuimpar = (x, y) => {
+      return new Promise((resolve, reject) => {
+        const total = x + y;
+        if (total % 2 == 0) {
+          resolve("É par");
+        } else {
+          reject("É ímpar");
+        }
+      });
+    };
+    // esta é a função que deve ser chamada, a lógica da função é acima, o async é usado por exemplo para "loadings"
+    const asyncParouImpar = async (x, y) => {
+      console.log("Loading...");
+      const result = await parOuimpar(x, y);
+      console.log(result);
+    };
+*/
+    const nome = (nomeUm) => {
+      return new Promise((resolve, reject) => {
+        if (nomeUm === "Vítor") {
+          resolve("Está Correto");
+        } else {
+          reject("Não é um nome");
+        }
+      });
+    };
+
+    const eNome = async (nomeDois) => {
+      console.log("Loading...");
+      const result = await nome(nomeDois);
+      console.log(result);
+    };
+  </script>
+  <body></body>
 </html>

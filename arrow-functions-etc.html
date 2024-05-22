@@ -49,7 +49,7 @@
     ];
 
     const encontrarEstudante = function (a) {
-      estudantes.find((estudante) => estudante.id == a);
+      return estudantes.find((estudante) => estudante.id == a);
     };
 
     const nomesEstudantes = estudantes.forEach((estudante) =>
