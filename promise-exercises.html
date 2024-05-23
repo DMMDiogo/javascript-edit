@@ -74,10 +74,10 @@ promise.then((result) => console.log(result)).catch((error) => console.log(error
 */
     const nome = (nomeUm) => {
       return new Promise((resolve, reject) => {
-        if (nomeUm === "Vítor") {
-          resolve("Está Correto");
+        if (nomeUm === "javascript") {
+          reject("Está errado");
         } else {
-          reject("Não é um nome");
+          resolve(nomeUm);
         }
       });
     };

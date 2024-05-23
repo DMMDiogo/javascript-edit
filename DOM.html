@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+ 
+  <body>
+    button type="button">Elementos</button>
+<p id="teste">Teste</p>
+<button type="button">Primeiro</button>
+<div class="container">
+       <h1><time>00:00:00</time></h1>
+       <button id="start">Start</button>
+       <button id="stop">Stop</button>
+       <button id="reset">Reset</button>
+</div>
+
+<button onclick="alert(clicked)">Click Please!</button>
+
+<form name="formulario">
+    <label for="firstName">First name:</label><br>
+    <input type="text" id="firstName" onchange="changeCampo()" name="firstName" value="João"><br>
+    <label for="lastName">Last name:</label><br>
+    <input type="text" id="lastName" name="lastName" value="Ribeiro"><br><br>
+    <button type="submit" onsubmit="changeCampo()" form="formulario">Submit</button>
+    <button onmouseover="this.setAttribute('style','background-color=red')">Reset</button>
+  </form> 
+  
+
+
+  </body>
+
+  <script>
+    /* const pTeste = document.getElementById("teste");
+    const buttonAll = document.querySelectorAll("button");
+    const buttonAllTwo = document.querySelector(".container button");
+
+    const funcaoDOM = () => {
+    
+            const createDiv = document.createElement("div");
+           const conteudoUm = document.createTextNode("Isto é apenas para um exercício");
+           const conteudoDois = document.createTextNode("Muito difícil");
+
+
+           createDiv.appendChild(conteudoUm);
+           createDiv.setAttribute("aria-label", "teste-teste")
+    document.body.appendChild(createDiv);
+
+   createDiv.appendChild(conteudoDois);
+        
+    }
+
+  funcaoDOM() */
+
+
+  const clicked = "Clicaste!";
+
+  const changeCampo = () => {
+    const campo = document.getElementById("firstName");
+    campo.setAttribute("style", "background-color:green;");
+  }
+
+
+
+    
+      </script>
+</html>
