@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Button 1</button>
+    <button>Button 2</button>
+
+    <button>Button 3</button>
+    <button>Button 4</button>
+  </body>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+    buttons[0].onmouseover = () => console.log("mouseover");
+    buttons[1].onmouseout = () => console.log("mouseout");
+
+    buttons.forEach((button) => {
+      button.addEventListener("mouseover", () => {
+        console.log("Estas a fazer Mouse Over");
+      });
+    }); //adicionar event listener a todos, usar aquela forma de usar sempre o elemento sozinho(button) e antes (buttons)
+
+    const buttonOne = document.querySelector("button");
+    setTimeout(() => {
+      buttonOne.setAttribute("id", "button one");
+    }, 5000);
+
+    const captureEvent = (event) => {
+      console.log(event);
+      if (event.type == "click") {
+        buttons[2].setAttribute("class", "clicked");
+      } else if (event.type == "mouseover") {
+        buttons[3].setAttribute("class", "hover");
+      }
+    };
+
+    buttons[2].addEventListener("click", captureEvent);
+    buttons[3].addEventListener("mouseover", captureEvent);
+  </script>
+</html>
