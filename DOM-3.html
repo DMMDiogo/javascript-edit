@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const container = document.createElement("div");
+    document.body.append(container);
+    container.innerHTML = `<ul>
+      <li>Exemplo 01</li>
+      <li>Exemplo02</li>
+    </ul>
+    <p>isto é uma div</p>`;
+
+    const adicionaLi = () => {
+      const li = document.querySelector("li");
+
+      li.insertAdjacentHTML("afterend", "<li>nova lista</li>");
+    };
+
+    adicionaLi();
+
+    const removeP = () => {
+      const pParent = document.getElementsByName("body");
+      const paragraph = document.querySelector("p");
+      //document.body.removechild(paragraph);
+      paragraph.remove();
+    };
+    removeP();
+
+    const createSpan = document.createElement("span");
+    createSpan.classList.add("elementoSpan");
+    createSpan.addEventListener("click", () => {
+      createSpan.classList.toggle("active");
+    }); //usar sempre função para que funcione
+    document.body.append(createSpan);
+    createSpan.innerText = "SPAN";
+
+    const button = document.createElement("button");
+    button.innerText = "button";
+    document.body.appendChild(button);
+
+    button.addEventListener("mouseover", () => {
+      button.classList.remove("default");
+    });
+    button.addEventListener("mouseout", () => {
+      button.classList.add("default");
+    });
+  </script>
+</html>

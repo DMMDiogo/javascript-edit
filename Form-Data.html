@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #formulario {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        gap: 2px;
+    }
+  </style>
+  <body>
+    <form id="formulario">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome"></input>
+        <label for="email">Email</label>
+        <input type="text" name="email"></input>
+        <label for="contact">Contacto</label>
+        <input type="name" name="contact"></input>
+        <button type="submit">Submit</button>
+    </form>
+  </body>
+  <script>
+
+    // ter a informação dum form
+    const formulario = document.getElementById("formulario");
+
+    formulario.addEventListener("submit", (event) => {
+
+event.preventDefault()
+
+const formData = new FormData(event.target);
+const nome = formData.get("nome");
+const email = formData.get("email");
+const contact = formData.get("contact");
+
+console.log("Nome", nome)
+console.log("Email", email)
+console.log("Contacto", contact)
+}) 
+
+  </script>
+</html>
