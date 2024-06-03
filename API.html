@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /*const myRequest = new XMLHttpRequest();
+    myRequest.open("GET", "https://dog.ceo/api/breeds/list/all");
+    myRequest.send(); */
+
+    const myRequest = new XMLHttpRequest();
+
+    const findAnime = (ano) => {
+      myRequest.open("GET", "https://api.jikan.moe/v4/top/anime");
+      myRequest.send();
+      myRequest.responseType = "json";
+      myRequest.addEventListener("load", () => {
+        const requestAnimes = myRequest.response; // só com a função é que depois é possível ver os resultados do array
+        console.log(requestAnimes);
+        const animes = requestAnimes.data;
+        console.log(animes);
+        //"transforma" em array
+        const filteredAnimes = animes.filter((anime) => anime.year == ano);
+        console.log(filteredAnimes);
+      });
+    };
+  </script>
+</html>
