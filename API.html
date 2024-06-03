@@ -27,5 +27,26 @@
         console.log(filteredAnimes);
       });
     };
+
+    function animePromise() {
+      return new Promise(function (resolve, reject) {
+        myRequest.open("GET", "https://api.jikan.moe/v4/top/anime");
+        myRequest.send();
+        myRequest.responseType = "json";
+        myRequest.onload = function () {
+          resolve(myRequest.response);
+          const requestAnimes = myRequest.response; // só com a função é que depois é possível ver os resultados do array
+          console.log(requestAnimes);
+          const animes = requestAnimes.data;
+          console.log(animes);
+          //"transforma" em array
+          const filteredAnimes = animes.filter((anime) => anime.year == ano);
+          console.log(filteredAnimes);
+        };
+        myRequest.onerror = function () {
+          reject("erro!");
+        };
+      });
+    }
   </script>
 </html>
