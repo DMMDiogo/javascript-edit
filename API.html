@@ -18,13 +18,19 @@
       myRequest.send();
       myRequest.responseType = "json";
       myRequest.addEventListener("load", () => {
-        const requestAnimes = myRequest.response; // só com a função é que depois é possível ver os resultados do array
+        const requestAnimes = myRequest.response; // só com a função é que depois é possível ver os resultados do array neste caso função load
         console.log(requestAnimes);
+        // isto é , neste caso, o object com as informações todas
         const animes = requestAnimes.data;
         console.log(animes);
-        //"transforma" em array
+        //"transforma" em array o animes
         const filteredAnimes = animes.filter((anime) => anime.year == ano);
-        console.log(filteredAnimes);
+
+        if (filteredAnimes === 0) {
+          console.log("O " + ano + " não têm conteudo");
+        } else {
+          console.log(filteredAnimes);
+        }
       });
     };
 
@@ -35,13 +41,18 @@
         myRequest.responseType = "json";
         myRequest.onload = function () {
           resolve(myRequest.response);
-          const requestAnimes = myRequest.response; // só com a função é que depois é possível ver os resultados do array
+          const requestAnimes = myRequest.response; // só com a função é que depois é possível ver os resultados do array, porque é assíncrono
           console.log(requestAnimes);
-          const animes = requestAnimes.data;
+          const animes = requestAnimes.data; // poderia ser myRequest.response.data
           console.log(animes);
           //"transforma" em array
           const filteredAnimes = animes.filter((anime) => anime.year == ano);
-          console.log(filteredAnimes);
+
+          if (filteredAnimes === 0) {
+            console.log("O " + ano + " não têm conteudo");
+          } else {
+            console.log(filteredAnimes);
+          }
         };
         myRequest.onerror = function () {
           reject("erro!");

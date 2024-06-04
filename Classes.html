@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Carro {
+      constructor(marca, modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+      }
+      display() {
+        console.log("Este é um" + this.marca + this.modelo);
+      }
+    }
+
+    const audir8 = new Carro("Audi", "R8");
+    const fordGT = new Carro("Ford", "GT");
+    audir8.display();
+    fordGT.display();
+
+    class Suv extends Carro {
+      constructor(marca, modelo, cor) {
+        super(marca, modelo);
+        this.cor = cor;
+      }
+      cor() {
+        if (this.cor) {
+          console.log(this.name + " têm cor");
+        } else {
+          console.log("Não têm cor");
+        }
+      }
+    }
+  </script>
+</html>
