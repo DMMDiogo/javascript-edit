@@ -71,5 +71,5 @@ const addToCart = async (productId) => {
 
 loadProducts();
 
-loadProducts()
+
    
