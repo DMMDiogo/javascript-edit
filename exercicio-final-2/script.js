@@ -32,12 +32,16 @@ const loadProducts = async () => {
     
     });
 } 
+
+const cart = [];
+
+const createCart = document
 const addToCart = async (productId) => {
     const cartEndpoint = "https://fakestoreapi.com/carts/7";
     const currentDate = new Date().toISOString().split('T')[0];
     const userId = 1; 
     const products = [{ productId: productId, quantity: 1 }];
-    const cart = [];
+    
 
     const cartData = {
         userId: userId,
@@ -45,14 +49,17 @@ const addToCart = async (productId) => {
         products: products
     };
 
-    if (products[0].quantity >= 1 &&  products[0].productId) {
+    if (cart.find(item => item[0].productId === productId))  {
         products[0].quantity++
     }
 
     else {
-        products[0].quantity = 1;
         cart.push(products);
+        console.log(products[0].quantity)
     }
+
+
+
 
     try {
         const response = await fetch(cartEndpoint, {
@@ -67,6 +74,8 @@ const addToCart = async (productId) => {
     } catch (error) {
         console.error("Error adding product to cart:", error);
     }
+
+    console.log(cart)
 };
 
 loadProducts();
