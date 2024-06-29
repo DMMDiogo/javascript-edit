@@ -35,29 +35,36 @@ const loadProducts = async () => {
 
 const cart = [];
 
-const createCart = document
 const addToCart = async (productId) => {
     const cartEndpoint = "https://fakestoreapi.com/carts/7";
     const currentDate = new Date().toISOString().split('T')[0];
     const userId = 1; 
-    const products = [{ productId: productId, quantity: 1 }];
     
+    
+
+    const existingProduct = cart.find(item => item.productId === productId);
+
+    console.log(existingProduct)
 
     const cartData = {
         userId: userId,
         date: currentDate,
-        products: products
+        products: cart
     };
-
-    if (cart.find(item => item[0].productId === productId))  {
-        products[0].quantity++
+   
+    if (existingProduct)  {
+        const lastIndex = cart.length - 1;
+        cart[lastIndex].quantity++
+        
+        
     }
 
     else {
+        let products = { productId: productId, quantity: 1 };
         cart.push(products);
-        console.log(products[0].quantity)
+        
+        
     }
-
 
 
 
@@ -75,7 +82,7 @@ const addToCart = async (productId) => {
         console.error("Error adding product to cart:", error);
     }
 
-    console.log(cart)
+    console.log(cartData)
 };
 
 loadProducts();
